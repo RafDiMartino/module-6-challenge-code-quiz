@@ -1,34 +1,45 @@
-# module-6-challenge-code-quiz
-edX Bootcamp Module 6 Challenge - Code Quiz
 # JavaScript Quiz Game
-## List of requirements
-* Questions
-    * Multiple choice options for answer
-    * Correct answer
-* Logic Flow
-// Handler for the start button
-    // Initialise the game data
-    // Start the timer
-    // Hide the introduction
-    // Display first question
-// If answer is correct then display 'correct' message
-    // Record correct answer
-    // Next question
-// If answer is not correct display 'wrong' message
-    // Record incorrect answer
-    // Deduct 'x' amount of time from timer
-    // Next question
-// End quiz criteria
-    // All questions answered
-    // When time left is reduced below zero due to incorrect answer
-    // Timer reaches 0
-// When quiz ends
-    // Hide questions
-    // Display game-end message
-    // Display user's score
-    // Option to save score with initials
-        // View high scores
-// Option to restart quiz
-// High score page
-// Needs to read all saved scores
-// Option to clear all scores
+## Description
+In this assignement I had to create an app that runs in the browser and features dynamically updated HTML and CSS, all powered by JavaScript.
+
+My task was to create a Coding Quiz about JavaScript
+
+When you click the button "Start Quiz", the application presents a series of questions with multiple choice answers, the quiz is timed the countdown start at 60 seconds.
+
+The acceptance criteria for this exercise were as follow:
+
+GIVEN I am taking a code quiz
+- WHEN I click the start button
+- THEN a timer starts and I am presented with a question
+- WHEN I answer a question
+- THEN I am presented with another question
+- WHEN I answer a question incorrectly
+- THEN time is subtracted from the clock
+- WHEN all questions are answered or the timer reaches 0
+- THEN the game is over
+- WHEN the game is over
+- THEN I can save my initials and score
+
+As an additional challenge I added a soud for correct and incorrect answer.
+
+The application fully rensponsive for all the screen sizes.
+
+![**screenshot of the application**](assets/images/application-screenshot.png)
+
+### Link to the deployed application 
+https://rafdimartino.github.io/module-6-challenge-code-quiz/
+
+## Installation
+N/A
+
+## Usage
+Clikc on "Start Quiz" button, you will be prompted with a series of random question about the JavaScript programming language, click one of the multiple choices.
+You have 60 seconds to answer as many questions as you can, every incorrect answer will deduct 10 seconds from the countdown timer. When the timer ends you will be able to add you initials and save you results in the browser local storage, you can access it by clicking on leftend corner link "View Highscores"
+
+Good Luck!
+
+## Credits
+N/A
+
+## License
+Please refer to the LICENSE in the repo.
