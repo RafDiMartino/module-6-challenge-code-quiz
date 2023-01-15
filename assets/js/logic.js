@@ -45,4 +45,28 @@ function countdownTimer(){
     scores()
 }
 
+// function to update the timer on wrong or right answer
+function updateTimer(){
+    countdown -= 10
+}
 
+// function that record the highscores to local storage
+let highscoreInitials = []
+
+function scores(){
+    submitInitials.addEventListener("click", (e) =>{
+        storeScores()
+        e.preventDefault();
+    })
+}
+
+function storeScores() {
+    highscoreInitials.push(`${initials.value.toUpperCase()} - ${totalScore}`)
+    localStorage.setItem('highscores', JSON.stringify(highscoreInitials));
+    // if (storedHighScore !== null) {
+    //     highscoreInitials = storedHighScore;
+    // }
+
+    console.log(`${highscoreInitials} ${totalScore}`)
+    window.location.replace('highscores.html');
+}
