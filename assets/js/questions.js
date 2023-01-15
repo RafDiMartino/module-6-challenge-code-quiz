@@ -135,3 +135,25 @@ function displayQuestion(){
     }
 }
 
+// Function that fires if the question is answered correctly
+function rightAnswer(){
+    rightAnsAudio.play()
+    feedback.classList.remove("hide")
+    setTimeout(() => {
+        feedback.classList.add("hide")
+    }, 1000)
+    feedback.textContent = "Right answer!!!"
+    totalScore++
+    console.log(totalScore)
+}
+
+// Function that fires if the question is answered incorrectly
+function wrongAnswer(){
+    wrongAnsAudio.play()
+    feedback.classList.remove("hide")
+    setTimeout(() => {
+        feedback.classList.add("hide")
+    }, 1000)
+    feedback.textContent = "Wrong answer!!!"
+    updateTimer()
+}
