@@ -19,7 +19,6 @@ let countdown = 10;
 // Function that starts the game
 function startGame(){
     startBtn.addEventListener("click", () => {
-        console.log("clicked")
         timer.textContent = countdown
         countdownTimer()
         displayQuestion()
@@ -28,14 +27,13 @@ function startGame(){
 }
 startGame()
 
-// function to start the timer
+// Function to start the timer
 function countdownTimer(){
     let timeInterval = setInterval( () => {
         countdown--;
         timer.textContent = countdown
         if (countdown <= 0) {
             clearInterval(timeInterval)
-            console.log("ended")
             questionsDiv.classList.add("hide")
             endScreen.classList.remove("hide")
             finalScore.textContent = `${totalScore}`
@@ -44,26 +42,25 @@ function countdownTimer(){
     }, 1000)
 }
 
-// function to update the timer on wrong or right answer
+// Function to update the timer on wrong or right answer
 function updateTimer(){
     countdown -= 10
 }
 
-// function that record the highscores to local storage
-// let highscoreInitials = []
+// Function to store the highscores to local storage
 function storeScores(){
     let initialsToStore = initials.value.toUpperCase().trim()
     let scoreToStore = totalScore;
-    let userScores = [
-        {
-            initials: initialsToStore,
-            score: scoreToStore
-        }
-    ];
-    userScores.push({initials: initialsToStore, score: scoreToStore})
+    let userScores = JSON.parse(window.localStorage.getItem('highscores')) || [];
+    let newScore = {
+        initials: initialsToStore,
+        score: scoreToStore
+    }
+    userScores.push(newScore)
     localStorage.setItem('highscores', JSON.stringify(userScores));
 }
 
+// Adds an event listener to the button sbumit initials
 submitInitials.addEventListener("click", (e) =>{
     e.preventDefault();
     storeScores()

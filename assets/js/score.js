@@ -1,16 +1,15 @@
-// function that record the highscores
+// Retriving highscores from local storage anad render them on the highscores page
 const highscoresOl = document.getElementById("highscores");
 
-let test = JSON.parse(localStorage.getItem("highscores"));
-console.log(test)
-for (let i = 0; i < test.length; i++) {
-    const element = test[i];
-    console.log(element)
-    let li = document.createElement("li")
-    li.textContent = `${element.initials} - scored ${element.score} points`
-    highscoresOl.appendChild(li)
+let getScores = JSON.parse(localStorage.getItem("highscores"));
+if (getScores != null) {
+    for (let i = 0; i < getScores.length; i++) {
+        const element = getScores[i];
+        let li = document.createElement("li")
+        li.textContent = `${element.initials} - scored ${element.score} points`
+        highscoresOl.appendChild(li)
+    } 
 }
-
 
 // Clear the highscores from the local storage
 const clearHighscore = document.getElementById("clear")

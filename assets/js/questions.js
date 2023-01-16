@@ -314,12 +314,12 @@ const questions = [
     },
 ]
 
+// Variable that keep tracks of the total scores
 let totalScore = 0
 
 // Function that displays a random question
 function displayQuestion(){
     let randomQuestion = Math.floor(Math.random() * questions.length)
-    // console.log(randomQuestion)
     for (let i = 0; i < questions.length; i++) {
         const element = questions[randomQuestion];
         questionTitle.textContent = element.question
@@ -329,7 +329,7 @@ function displayQuestion(){
         element.choices.forEach((el) => {
             let choicesBtn = document.createElement("button")
             choices.appendChild(choicesBtn)
-            choicesBtn.addEventListener("click", ()=>{
+            choicesBtn.addEventListener("click", () => {
                 setTimeout(() => {
                     displayQuestion()
                 }, 1000)
