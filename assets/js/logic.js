@@ -23,7 +23,6 @@ function startGame(){
         countdownTimer()
         displayQuestion()
     })
-
 }
 startGame()
 
