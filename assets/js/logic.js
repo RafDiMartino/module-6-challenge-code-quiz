@@ -14,7 +14,7 @@ const rightAnsAudio = new Audio("assets/sfx/correct.wav")
 const wrongAnsAudio = new Audio("assets/sfx/incorrect.wav")
 
 let timer = document.getElementById("time");
-let countdown = 60;
+let countdown = 10;
 
 // Function that starts the game
 function startGame(){
@@ -42,7 +42,6 @@ function countdownTimer(){
             timer.textContent = 0;
         }
     }, 1000)
-    scores()
 }
 
 // function to update the timer on wrong or right answer
@@ -51,22 +50,22 @@ function updateTimer(){
 }
 
 // function that record the highscores to local storage
-let highscoreInitials = []
-
-function scores(){
-    submitInitials.addEventListener("click", (e) =>{
-        storeScores()
-        e.preventDefault();
-    })
+// let highscoreInitials = []
+function storeScores(){
+    let initialsToStore = initials.value.toUpperCase().trim()
+    let scoreToStore = totalScore;
+    let userScores = [
+        {
+            initials: initialsToStore,
+            score: scoreToStore
+        }
+    ];
+    userScores.push({initials: initialsToStore, score: scoreToStore})
+    localStorage.setItem('highscores', JSON.stringify(userScores));
 }
 
-function storeScores() {
-    highscoreInitials.push(`${initials.value.toUpperCase()} - ${totalScore}`)
-    localStorage.setItem('highscores', JSON.stringify(highscoreInitials));
-    // if (storedHighScore !== null) {
-    //     highscoreInitials = storedHighScore;
-    // }
-
-    console.log(`${highscoreInitials} ${totalScore}`)
+submitInitials.addEventListener("click", (e) =>{
+    e.preventDefault();
+    storeScores()
     window.location.replace('highscores.html');
-}
+})
