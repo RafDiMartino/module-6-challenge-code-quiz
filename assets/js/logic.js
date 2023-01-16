@@ -14,7 +14,7 @@ const rightAnsAudio = new Audio("assets/sfx/correct.wav")
 const wrongAnsAudio = new Audio("assets/sfx/incorrect.wav")
 
 let timer = document.getElementById("time");
-let countdown = 10;
+let countdown = 60;
 
 // Function that starts the game
 function startGame(){

@@ -356,7 +356,6 @@ function rightAnswer(){
     }, 1000)
     feedback.textContent = "Right answer!!!"
     totalScore++
-    console.log(totalScore)
 }
 
 // Function that fires if the question is answered incorrectly

@@ -20,7 +20,7 @@ button {
   font-size: 100%;
   background-color: #563d7c;
   border-radius: 5px;
-  padding: 2px 10px;
+  padding: 10px 10px;
   color: white;
   border: 0;
   transition: background-color 0.1s;
@@ -36,6 +36,7 @@ button:hover {
 
 input[type="text"] {
   font-size: 100%;
+  padding: 7px;
 }
 
 ol {
@@ -45,7 +46,7 @@ ol {
 }
 
 li {
-  padding: 5px;
+  padding: 10px;
   list-style: decimal inside none;
 }
 
